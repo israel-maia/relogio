@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   
+   <script>
+    function startTime() {
+        var tempo = new Date();
+        var h = tempo.getHours();
+        var m = tempo.getMinutes();
+        var s = tempo.getSeconds();
+
+        m = checkTime(m); 
+        s = checkTime(s);   
+         document.getElementById('txt').innerHTML = h + ':' + m + ':' + s;
+         tempo = setTimeout('startTime()', 500);
+    }
+
+    function checkTime(i) {
+            if (i < 10) {
+                i = '0' + i;
+            }
+            return i;
+        }
+
+</script>
+
+<div id="txt">
+<script type="text/javascript">
+document.write(startTime());
+</script>
+</div>
+
+</body>
+</html>
